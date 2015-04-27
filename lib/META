@@ -1,8 +1,8 @@
 # OASIS_START
-# DO NOT EDIT (digest: 01cb94392c14d09e7d787a08e79e240d)
+# DO NOT EDIT (digest: 141ddd5e5eeb96d62298d8cfefbc1177)
 version = "0.1"
 description = "Minimal OCaml bindings to cpm"
-requires = "bigarray threads"
+requires = "bigarray ctypes ctypes.foreign threads"
 archive(byte) = "ocpm.cma"
 archive(byte, plugin) = "ocpm.cma"
 archive(native) = "ocpm.cmxa"

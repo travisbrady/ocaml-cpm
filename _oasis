@@ -13,16 +13,10 @@ Library ocpm
   Path:                 lib
   FindlibName:          ocpm
   BuildTools:           ocamlbuild
-  BuildDepends:         bigarray, threads
+  BuildDepends:         bigarray, ctypes, ctypes.foreign, threads
   CompiledObject:       best
-  CCOpt:                -Wall -pedantic -std=c++11 -g -fPIC -DPIC
-  CSources:             convex_polytope_machine.cpp, convex_polytope_machine.h,
-                        cpm.cpp, cpm.h,
-                        dense_matrix.cpp, dense_matrix.h,
-                        eval_utils.cpp, eval_utils.h,
-                        sparse_vector.cpp, sparse_vector.h,
-                        stochastic_data_adaptor.cpp, stochastic_data_adaptor.h,
-                        ocpm_stubs.cpp,ocpm_stubs.h
+  CCopt:                -g -x c++ -O2 -Wextra -Wstrict-overflow=5 -fno-strict-aliasing -Wfatal-errors -shared -fPIC
+  CClib:                -lstdc++
   Modules:              Ocpm
 
 #Executable simple
