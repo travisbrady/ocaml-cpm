@@ -9,6 +9,9 @@ Plugins:            META (0.4), DevFiles (0.4), StdFiles (0.4)
 XStdFilesAUTHORS:   false
 XStdFilesREADME:    false
 
+#PreBuildCommand:      ./_prebuild
+#PostInstallCommand:   ocamlfind install -add ocpm _build/lib/libcpm.so
+
 Library ocpm
   Path:                 lib
   FindlibName:          ocpm
@@ -19,12 +22,11 @@ Library ocpm
   CClib:                -lstdc++
   Modules:              Ocpm
 
-#Executable simple
-#  Path:                 examples
-#  BuildTools:           ocamlbuild
-#  BuildDepends:         haywire, ctypes, ctypes.foreign
-#  CompiledObject:       native
-#  NativeOpt:            -g
-#  MainIs:               simple.ml
-#  Install:              false
+Executable simple
+  Path:                 examples
+  BuildTools:           ocamlbuild
+  BuildDepends:         ocpm
+  CompiledObject:       native
+  MainIs:               simple.ml
+  Install:              false
 
