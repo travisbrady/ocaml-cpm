@@ -1,4 +1,4 @@
-extern "C" {
+extern "c" {
 #include<caml/mlvalues.h>
 #include<caml/memory.h>
 #include<caml/callback.h>
